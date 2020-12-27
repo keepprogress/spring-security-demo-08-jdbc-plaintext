@@ -22,6 +22,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @ComponentScan(basePackages="com.luv2code.springsecurity.demo")
 @PropertySource("classpath:persistence-mysql.properties")
 public class DemoAppConfig {
+
 	
 	// set up variable to hold the properties
 	
