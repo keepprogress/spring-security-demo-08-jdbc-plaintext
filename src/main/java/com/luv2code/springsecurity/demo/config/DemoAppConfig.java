@@ -22,7 +22,6 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @ComponentScan(basePackages="com.luv2code.springsecurity.demo")
 @PropertySource("classpath:persistence-mysql.properties")
 public class DemoAppConfig {
-
 	
 	// set up variable to hold the properties
 	
@@ -74,19 +73,19 @@ public class DemoAppConfig {
 		// set database connection props
 		
 		securityDataSource.setJdbcUrl(env.getProperty("jdbc.url"));
-		securityDataSource.setJdbcUrl(env.getProperty("jdbc.user"));
-		securityDataSource.setJdbcUrl(env.getProperty("jdbc.password"));
+		securityDataSource.setUser(env.getProperty("jdbc.user"));
+		securityDataSource.setPassword(env.getProperty("jdbc.password"));
 
 		// set connection pool props
 		
 		securityDataSource.setInitialPoolSize(
-				getIntProperty("conneciton.pool.initialPoolSize"));
+				getIntProperty("connection.pool.initialPoolSize"));
 		securityDataSource.setMinPoolSize(
-				getIntProperty("conneciton.pool.minPoolSize"));
+				getIntProperty("connection.pool.minPoolSize"));
 		securityDataSource.setMaxPoolSize(
-				getIntProperty("conneciton.pool.maxPoolSize"));
+				getIntProperty("connection.pool.maxPoolSize"));
 		securityDataSource.setMaxIdleTime(
-				getIntProperty("conneciton.pool.maxIdleTime"));
+				getIntProperty("connection.pool.maxIdleTime"));
 		
 		return securityDataSource;
 	}
